@@ -1,0 +1,3 @@
+78cecbec531169cb3cd5f89d5ad05429b98ec77aa15eac881844aef3937d40c0  ContextEvidenceLedger-0.1.0-win-x64.zip
+7112098937833450d1856b13c4da046454041b5689eaacb2159d63737d1f1874  context-ledger-hook-0.1.0.zip
+a8e82a79e07940eda30fbfd51529738ad7bc731648ae3b2cf56a611bae44ea70  context-ledger-web-0.1.0.zip

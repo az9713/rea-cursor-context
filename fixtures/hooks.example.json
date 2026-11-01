@@ -1,0 +1,10 @@
+{
+  "version":1,
+  "hooks":{
+    "beforeSubmitPrompt":[{"command":"node .cursor/context-ledger/hook.cjs"}],
+    "beforeReadFile":[{"command":"node .cursor/context-ledger/hook.cjs"}],
+    "afterFileEdit":[{"command":"node .cursor/context-ledger/hook.cjs"}],
+    "preCompact":[{"command":"node .cursor/context-ledger/hook.cjs"}],
+    "stop":[{"command":"node .cursor/context-ledger/hook.cjs"}]
+  }
+}

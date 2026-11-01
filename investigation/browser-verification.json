@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "five verified demo records",
+    "positive and absent canary observations",
+    "tampered record rejected",
+    "failed load clears previous state",
+    "HTML filenames treated as text",
+    "mobile layout fits",
+    "documentation image loaded",
+    "no browser exceptions"
+  ],
+  "host": "Local Chromium synthetic application",
+  "cursor_host_tested": false
+}

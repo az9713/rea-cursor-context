@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "app": "Context Evidence Ledger",
+  "renderer": {
+    "title": "Context Evidence Ledger",
+    "heading": "Context Evidence Ledger",
+    "node": "undefined",
+    "selector": true
+  },
+  "scope": "Packaged renderer load and isolation smoke; app-specific core/browser tests separate"
+}

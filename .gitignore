@@ -1,0 +1,7 @@
+node_modules/
+releases/*-win-x64/
+releases/*.zip
+fixtures/test-runs/
+investigation/*.private.json
+.context-ledger/
+.runtime/
