@@ -2,7 +2,7 @@
 
 **Which file reads were actually reported before this edit—and where did compaction occur?** Add a local, hash-linked timeline to a Cursor project, then inspect it in the desktop viewer or a browser. Content and prompts are hashed rather than saved as raw text.
 
-[Try the live app](https://az9713.github.io/rea-cursor-context/app.html) · [Guide](https://az9713.github.io/rea-cursor-context/) · [Windows desktop and hook packages](https://github.com/az9713/rea-cursor-context/releases)
+[Try the live app](https://az9713.github.io/rea-cursor-context/app.html) · [Guide](https://az9713.github.io/rea-cursor-context/) · [Windows desktop and hook packages](https://github.com/az9713/rea-cursor-context/releases/tag/v0.1.1)
 
 ## Before and after
 
@@ -13,6 +13,10 @@
 | A transcript can be edited without an obvious consistency failure. | Verify a sequence/hash chain before display; retain its head independently for a stronger tamper check. |
 
 ![Synthetic context timeline](docs/screenshots/timeline.png)
+
+Version0.1.1 clears the prior evidence immediately when a new load starts or is rejected. Older asynchronous file reads and digest checks cannot overwrite a newer selection.12actual browser checks include oversized-file and two stale-load regressions.
+
+The recorder also preserves the20MB boundary before committing an append and handles a missing trailing JSONL separator.14core/process tests pass.
 
 ## Run the viewer
 

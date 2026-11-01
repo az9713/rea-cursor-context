@@ -41,10 +41,13 @@ function append(payload,workspace){
  try{
   if(fs.existsSync(file)&&fs.lstatSync(file).isSymbolicLink())throw Error('Ledger file must not be a link');
   if(fs.existsSync(file)&&fs.statSync(file).size>20_000_000)throw Error('Ledger full; archive it before continuing');
-  const records=fs.existsSync(file)?parse(fs.readFileSync(file,'utf8')):[];
+  const prior=fs.existsSync(file)?fs.readFileSync(file,'utf8'):'';
+  const records=prior?parse(prior):[];
   const data=normalize(payload,root),body={schema:'context-ledger/v1',sequence:records.length+1,previous:records.length?records.at(-1).digest:null,data},record={...body,digest:hash(body)};
   if(records.length>=50000)throw Error('Ledger record limit reached');
-  fs.appendFileSync(file,canonical(record)+'\n',{encoding:'utf8',mode:0o600});return record;
+  const line=(prior&&!prior.endsWith('\n')?'\n':'')+canonical(record)+'\n';
+  if(Buffer.byteLength(prior)+Buffer.byteLength(line)>20_000_000)throw Error('Ledger full; archive it before continuing');
+  fs.appendFileSync(file,line,{encoding:'utf8',mode:0o600});return record;
  }finally{fs.rmdirSync(lock);}
 }
 function response(event){return event==='beforeReadFile'?{permission:'allow'}:event==='beforeSubmitPrompt'?{continue:true}:{};}

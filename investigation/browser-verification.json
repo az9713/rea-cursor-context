@@ -5,7 +5,11 @@
     "positive and absent canary observations",
     "tampered record rejected",
     "failed load clears previous state",
+    "oversized selection invalidates old evidence",
+    "superseded digest cannot render old or mixed records",
+    "superseded file read cannot replace newer selection",
     "HTML filenames treated as text",
+    "nonhex conversation identity rejected like core",
     "mobile layout fits",
     "documentation image loaded",
     "no browser exceptions"

@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: normalization excludes raw content email prompt and absolute roots
+ok 1 - normalization excludes raw content email prompt and absolute roots
+  ---
+  duration_ms: 2.7619
+  type: 'test'
+  ...
+# Subtest: outside paths are marked without reading them
+ok 2 - outside paths are marked without reading them
+  ---
+  duration_ms: 0.3353
+  type: 'test'
+  ...
+# Subtest: generation identities differ and compaction semantics remain unknown
+ok 3 - generation identities differ and compaction semantics remain unknown
+  ---
+  duration_ms: 0.4059
+  type: 'test'
+  ...
+# Subtest: append maintains verifiable sequence chain
+ok 4 - append maintains verifiable sequence chain
+  ---
+  duration_ms: 11.0693
+  type: 'test'
+  ...
+# Subtest: tampering omission and reordering fail
+ok 5 - tampering omission and reordering fail
+  ---
+  duration_ms: 7.4183
+  type: 'test'
+  ...
+# Subtest: invalid prior ledger is preserved without append
+ok 6 - invalid prior ledger is preserved without append
+  ---
+  duration_ms: 4.7828
+  type: 'test'
+  ...
+# Subtest: unsupported malformed oversized and nonfinite payloads fail
+ok 7 - unsupported malformed oversized and nonfinite payloads fail
+  ---
+  duration_ms: 7.1164
+  type: 'test'
+  ...
+# Subtest: actual hook process records hashed content and returns allow JSON
+ok 8 - actual hook process records hashed content and returns allow JSON
+  ---
+  duration_ms: 1111.9339
+  type: 'test'
+  ...
+# Subtest: malformed actual hook fails open and does not record
+ok 9 - malformed actual hook fails open and does not record
+  ---
+  duration_ms: 1216.0583
+  type: 'test'
+  ...
+# Subtest: different processes append without sequence collisions
+ok 10 - different processes append without sequence collisions
+  ---
+  duration_ms: 4756.3839
+  type: 'test'
+  ...
+# Subtest: simultaneous hook processes retain every verifiable record
+ok 11 - simultaneous hook processes retain every verifiable record
+  ---
+  duration_ms: 5411.6827
+  type: 'test'
+  ...
+# Subtest: forged body with an invalid identity cannot validate by rehashing
+ok 12 - forged body with an invalid identity cannot validate by rehashing
+  ---
+  duration_ms: 10.0174
+  type: 'test'
+  ...
+# Subtest: append refuses a resulting UTF8 ledger over20MB without modifying valid prior bytes
+ok 13 - append refuses a resulting UTF8 ledger over20MB without modifying valid prior bytes
+  ---
+  duration_ms: 1537.4536
+  type: 'test'
+  ...
+# Subtest: append inserts a missing JSONL separator before the next committed record
+ok 14 - append inserts a missing JSONL separator before the next committed record
+  ---
+  duration_ms: 31.3724
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 15272.7391
