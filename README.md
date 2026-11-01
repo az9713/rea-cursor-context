@@ -14,7 +14,7 @@
 
 ![Synthetic context timeline](docs/screenshots/timeline.png)
 
-Version0.1.1 clears the prior evidence immediately when a new load starts or is rejected. Older asynchronous file reads and digest checks cannot overwrite a newer selection.12actual browser checks include oversized-file and two stale-load regressions.
+Version0.1.1 clears the prior evidence immediately when a new load starts or is rejected. Older asynchronous file reads and digest checks cannot overwrite a newer selection.13actual browser checks include oversized-file and two stale-load regressions.
 
 The recorder also preserves the20MB boundary before committing an append and handles a missing trailing JSONL separator.14core/process tests pass.
 

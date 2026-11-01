@@ -10,6 +10,7 @@
     "superseded file read cannot replace newer selection",
     "HTML filenames treated as text",
     "nonhex conversation identity rejected like core",
+    "numeric observed_at rejected like core",
     "mobile layout fits",
     "documentation image loaded",
     "no browser exceptions"
