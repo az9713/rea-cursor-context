@@ -1,8 +1,16 @@
 # Context Evidence Ledger for Cursor
 
-**Which file reads were actually reported before this edit—and where did compaction occur?** Add a local, hash-linked timeline to a Cursor project, then inspect it in the desktop viewer or a browser. Content and prompts are hashed rather than saved as raw text.
+When an AI coding edit surprises you, it helps to inspect the activity around it. This tool records selected events reported by Cursor and puts requests to read files, edits and chat-shortening events on one timeline.
 
-[Try the live app](https://az9713.github.io/rea-cursor-context/app.html) · [Guide](https://az9713.github.io/rea-cursor-context/) · [Windows desktop and hook packages](https://github.com/az9713/rea-cursor-context/releases/tag/v0.1.1)
+You expected a coding run to consult two files, but its result seems to ignore one. Or the conversation was shortened partway through a long task. Instead of relying on memory, you can look for the events the recorder actually received.
+
+**Example:** The example names canary-a.txt and canary-b.txt as files you expected to be consulted. It contains a reported read request for the first file but no matching event for the second. That gives you something concrete to investigate; it does not prove the second file was omitted from the model's input.
+
+**What you install:** A project event recorder for Cursor, plus a separate viewer.
+
+**Current scope:** The recorder cannot look inside the model, prove that a file was successfully read or used, or recover what remained after the conversation was shortened. Recorder and viewer tests passed; the setup still needs a test in a real Cursor session.
+
+[Live guide](https://az9713.github.io/rea-cursor-context/) · [Download packages](https://github.com/az9713/rea-cursor-context/releases/tag/v0.1.1)
 
 ## Before and after
 
