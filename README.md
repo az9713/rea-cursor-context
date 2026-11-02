@@ -12,6 +12,18 @@ You expected a coding run to consult two files, but its result seems to ignore o
 
 [Live guide](https://az9713.github.io/rea-cursor-context/) · [Download packages](https://github.com/az9713/rea-cursor-context/releases/tag/v0.1.1)
 
+<!-- rea-release-expectations:start -->
+## What to expect from this release
+
+**Status: experimental.** Read the tested scope and remaining work below before choosing this release for your workflow.
+
+- **What you get:** A hook recorder connected to a Cursor project, plus a separate Windows/browser timeline viewer. The viewer is a companion tool; it is not a new panel inside Cursor.
+- **Verified so far:** Recorder event handling, log checks, import failure cases and the timeline were tested using supplied events, real local processes and browser/package checks.
+- **Still needs testing or implementation:** Hook setup and a complete recording session in the actual Cursor app remain unverified. Reported read requests do not prove which files reached or influenced the model.
+- **Relationship to the original app:** Cursor's documented hooks provide the intended connection. Embedding the timeline in Cursor would require a separate extension or interface integration; the current package does not modify Cursor's executable.
+
+<!-- rea-release-expectations:end -->
+
 ## Before and after
 
 | Before | With this project |
