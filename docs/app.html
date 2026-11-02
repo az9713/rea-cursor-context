@@ -16,7 +16,26 @@
 @media(max-width:760px){.rea-story-flow{grid-template-columns:1fr;gap:18px}.rea-story{margin:22px 0 30px!important}.rea-story--compact{margin:12px 0 20px!important}}
 /* rea-editorial:end */
 
+
+/* rea-pages-expectations:style:start */
+.rea-expectations{box-sizing:border-box;min-width:0;width:100%;margin:24px 0 32px!important;padding:clamp(18px,3vw,28px);background:#16232e;border:1px solid #4b606d;border-left:4px solid #e1c185;border-radius:8px;color:#e8eef4;font:16px/1.65 system-ui,sans-serif;text-align:left;overflow-wrap:anywhere}
+.rea-expectations .rea-expectations-tag{margin:0 0 10px!important;color:#ead2a6!important;font:600 13px/1.5 system-ui,sans-serif!important;letter-spacing:.02em!important;text-transform:none!important;max-width:none}
+.rea-expectations .rea-expectations-title{margin:0 0 20px!important;padding:0!important;border:0!important;color:#f1f5f9!important;font:650 clamp(21px,3vw,27px)/1.3 system-ui,sans-serif!important;letter-spacing:-.015em!important;text-transform:none!important}
+.rea-expectations dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px;margin:0!important;padding:0!important}
+.rea-expectations dl>div{min-width:0;margin:0!important;padding:0!important}
+.rea-expectations dt{margin:0 0 6px!important;padding:0!important;color:#a7dfcd;font:650 15px/1.5 system-ui,sans-serif}
+.rea-expectations dd{margin:0!important;padding:0!important;color:#d4e0ea;font:inherit;max-width:none}
+.rea-expectations--compact{font-size:15px;margin:18px 0 24px!important;padding:18px}
+.rea-expectations--compact .rea-expectations-title{font-size:21px!important}
+@media(max-width:760px){.rea-expectations dl{grid-template-columns:1fr;gap:18px}.rea-expectations{margin:20px 0 26px!important}}
+@media(max-width:360px){input[type=file]{max-width:100%;box-sizing:border-box}}
+/* rea-pages-expectations:style:end */
+
 </style><h1>Context Evidence Ledger</h1><p>When an AI coding edit surprises you, it helps to inspect the activity around it. This tool records selected events reported by Cursor and puts requests to read files, edits and chat-shortening events on one timeline.</p>
+
+<!-- rea-pages-expectations:start -->
+<section class="rea-expectations rea-expectations--compact" data-rea-expectations="cursor-context" aria-labelledby="release-expectations-cursor-context"><p class="rea-expectations-tag">Experimental release · Standalone companion tool</p><h2 class="rea-expectations-title" id="release-expectations-cursor-context">What to expect from this release</h2><dl><div><dt>What you get</dt><dd data-expectation="delivery">A hook recorder connected to a Cursor project, plus a separate Windows/browser timeline viewer. The viewer is a companion tool; it is not a new panel inside Cursor.</dd></div><div><dt>Verified so far</dt><dd data-expectation="verified">Recorder event handling, log checks, import failure cases and the timeline were tested using supplied events, real local processes and browser/package checks.</dd></div><div><dt>Still needs testing or implementation</dt><dd data-expectation="remaining">Hook setup and a complete recording session in the actual Cursor app remain unverified. Reported read requests do not prove which files reached or influenced the model.</dd></div><div><dt>Relationship to the original app</dt><dd data-expectation="boundary">Cursor&#x27;s documented hooks provide the intended connection. Embedding the timeline in Cursor would require a separate extension or interface integration; the current package does not modify Cursor&#x27;s executable.</dd></div></dl></section>
+<!-- rea-pages-expectations:end -->
 <section class="rea-story rea-story--compact" data-rea-story="compact"><h2>Start with the example</h2><p>The live page opens a made-up event log without needing Cursor. Your own records are processed locally; filenames and timing can still contain private information.</p><p><strong>Your task:</strong> Open the local record in the browser or Windows viewer. Look at file requests and edits around each turn.</p><p class="rea-story-scope"><a href="https://az9713.github.io/rea-cursor-context/">Read the plain-language guide, supported uses and testing limits</a></p></section>
 <p class="unknown">A hook event is not proof that a model received or used a file. Final context and post-compaction semantics remain unknown.</p><button id="demo">Load synthetic demonstration</button> <label>Open local JSONL <input type="file" id="file" accept=".jsonl,.json,.txt"></label><p id="status" role="status">Load a ledger. Files stay in this browser.</p><div id="scroll"><table><thead><tr><th>Sequence</th><th>Turn digest</th><th>Event</th><th>File</th><th>Content/edit digest</th><th>Evidence limit</th></tr></thead><tbody id="rows"></tbody></table></div><h2>Which expected files were reported?</h2><label>Expected relative file names<textarea id="canary">canary-a.txt
 canary-b.txt</textarea></label><button id="check">Check reported reads</button><pre id="canary-result"></pre><p><a href="index.html">Install, mechanism and limitations</a></p><script src="viewer.js"></script></html>
